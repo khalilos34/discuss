@@ -20,7 +20,10 @@ const HeaderAuth = () => {
         <>
           <Popover placement="left">
             <PopoverTrigger>
-              <Avatar src={session.data?.user?.image || ""} />
+              <Avatar
+                className="cursor-pointer"
+                src={session.data?.user?.image || ""}
+              />
             </PopoverTrigger>
 
             <PopoverContent>
@@ -33,7 +36,7 @@ const HeaderAuth = () => {
           </Popover>
         </>
       ) : (
-        <NavbarContent justify="end">
+        <div className="flex gap-2">
           <NavbarItem>
             <form action={actions.signIn}>
               <Button type="submit" color="secondary" variant="faded">
@@ -48,7 +51,7 @@ const HeaderAuth = () => {
               </Button>
             </form>
           </NavbarItem>
-        </NavbarContent>
+        </div>
       )}
     </div>
   );

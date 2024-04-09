@@ -21,6 +21,9 @@ const Header = async () => {
           <Input placeholder="search..." />
         </NavbarItem>
       </NavbarContent>
+      <NavbarContent justify="end">
+        <HeaderAuth />
+      </NavbarContent>
     </Navbar>
   );
 };
