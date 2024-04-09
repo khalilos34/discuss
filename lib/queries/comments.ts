@@ -7,8 +7,8 @@ export type CommentsWithAuthor = Comment & {
 export const fetchCommentsByPostId = async (
   postId: string,
 ): Promise<CommentsWithAuthor[]> => {
-  return db.comment.findMany({
-    where: { id: postId },
+  return await db.comment.findMany({
+    where: { postId },
     include: {
       user: { select: { name: true, image: true } },
     },
