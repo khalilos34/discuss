@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 
 import { z } from "zod";
 
+
 interface CreatePostFormState {
   errors: {
     title?: string[];
@@ -77,3 +78,4 @@ export const CreateNewPost = async (
   revalidatePath(paths.topicShow(slug));
   redirect(paths.postShow(slug, post.id));
 };
+
