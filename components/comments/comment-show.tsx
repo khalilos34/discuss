@@ -23,7 +23,7 @@ export default function CommentShow({ commentId, comments }: CommentShowProps) {
   });
 
   return (
-    <div className="mb-1 mt-2 border p-4">
+    <div className="mb-1 mt-2 border p-2">
       <div className="flex gap-3">
         <Image
           src={comment.user.image || ""}
