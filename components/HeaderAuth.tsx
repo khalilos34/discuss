@@ -7,6 +7,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  Skeleton,
 } from "@nextui-org/react";
 import { useSession } from "next-auth/react";
 
@@ -14,6 +15,9 @@ import * as actions from "@/lib/actions/auth.actions";
 
 const HeaderAuth = () => {
   const session = useSession();
+  if (session.status === "loading")
+    return <Skeleton className="h-10 w-10 rounded-full" />;
+
   return (
     <div>
       {session.data?.user ? (
